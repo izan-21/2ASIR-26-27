@@ -67,6 +67,7 @@ Definen la configuración por defecto para todos los clientes que soliciten red 
 Es la sección obligatoria donde se define el rango de direccionamiento IP que asignará el servidor.
 
 Plaintext
+
 subnet 192.168.1.0 netmask 255.255.255.0 {
 
     range 192.168.1.50 192.168.1.150;
