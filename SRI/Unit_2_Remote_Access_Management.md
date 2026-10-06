@@ -24,6 +24,7 @@ Empezamos con instalar el servicio DHCP, para ello seguiremos estos pasos:
 
 
 Ahora empezamos a instalar el servicio DHCP.
+
       1. Le damos a siguiente hasta llegar Roles del Servidor.
       
       2. Agregamos **Servidor DHCP**.
