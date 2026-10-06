@@ -68,13 +68,21 @@ Es la sección obligatoria donde se define el rango de direccionamiento IP que a
 
 Plaintext
 subnet 192.168.1.0 netmask 255.255.255.0 {
+
     range 192.168.1.50 192.168.1.150;
+    
     option routers 192.168.1.1;
+    
     option subnet-mask 255.255.255.0;
+    
     option broadcast-address 192.168.1.255;
+    
     option domain-name-servers 192.168.1.1;
+    
 }
+
 subnet ... netmask ...: Define la red de trabajo y su máscara.
+
 
 range <IP_inicio> <IP_fin>;: Especifica el rango dinámico de IP que el servidor asignará a los equipos.
 
