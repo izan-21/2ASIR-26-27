@@ -34,7 +34,21 @@ Ahora empezamos a instalar el servicio DHCP.
 **Configuración de la IP en el servicio DHCP**
       1. Primero nos vamos a la parte superior derecha y le damos a la opción de Herramientas.
 
-      2. 
+      2. En la parte de herramientas le damos en la parte de DHCP.
+
+      3. Al entrar desplegamos la parte de WIN, y en la parte de IPv4 le damos clic derecho y a nuevos ámbitos.
+
+      4. Ahora le asignamos un nombre al ámbito.
+
+      5. Ahora le asignamos el intervalo de IPs, y configuramos la máscara(/24).
+
+      6. Le damos a siguiente porque no queremos excluir nignuna IP.
+
+      7. Configuramos la puerta de enlace que será 172.16.0.1
+
+      8. Continuamos, ya que el DNS está ya configurado.
+
+      9. Le damos a finalizar y ya tendríamos el servicio hecho.
 
 
 
