@@ -1,11 +1,15 @@
 
 
 **1. Para arreglar el problema debemos de cambiar el nombre del dominio, con el siguiente comando.**
+
 **sudo mv /etc/bind/db.midominio.local /etc/bind/db.midominio.lan**
 
 **2. Actualizar el contenido del archivo**
+
 Abre el archivo recién renombrado con nano, para cambiar el nombre del dominio:
+
 **sudo nano /etc/bind/db.midominio.lan**
+
 $TTL    604800
 @       IN      SOA     ns1.midominio.lan. admin-midominio.lan. (
                          4         ; Serial (recuerda subir el serial)
