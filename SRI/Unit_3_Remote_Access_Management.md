@@ -11,18 +11,31 @@ Abre el archivo recién renombrado con nano, para cambiar el nombre del dominio:
 **sudo nano /etc/bind/db.midominio.lan**
 
 $TTL    604800
+
 @       IN      SOA     ns1.midominio.lan. admin-midominio.lan. (
+
                          4         ; Serial (recuerda subir el serial)
+                         
                     604800         ; Refresh
+                    
                      86400         ; Retry
+                     
                    2419200         ; Expire
+                   
                     604800 )       ; Negative Cache TTL
+                    
 ;
+
 @       IN      NS      ns1.midominio.lan.
+
 ns1     IN      A       172.16.5.40
+
 equipo1 IN      A       172.16.5.42
+
 equipo2 IN      A       172.16.5.43
+
 equipo3 IN      A       172.16.5.44
+
 
 
 **3. Actualizar el archivo named.conf.local**
