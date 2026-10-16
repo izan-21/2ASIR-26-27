@@ -1,5 +1,92 @@
 **Instalación de un Servidor DNS**
 
+**1.Instalar los paquetes de BIND9:**
+
+Actualiza los repositorios de tu sistema e instala BIND9 junto con sus utilidades.
+
+**sudo apt update**
+
+**sudo apt install bind9 bind9utils bind9-doc -y**
+
+**2.Configurar las opciones globales**
+
+Edita el archivo de configuración global /etc/bind/named.conf.options 
+
+**sudo nano /etc/bind/named.conf.options**
+
+**Añade o descomenta la sección de forwarders**
+
+forwarders {
+
+    8.8.8.8;
+    
+    8.8.4.4;
+    
+};
+
+3.Definir la zona local
+
+Edita el archivo /etc/bind/named.conf.local para declarar tu dominio 
+
+zone "midominio.local" {
+
+    type master;
+    
+    file "/etc/bind/db.midominio.local";
+    
+};
+
+**4.Crear el archivo de registros**
+
+Copia la plantilla por defecto y edita tu archivo de zona
+
+**cp /etc/bind/db.local /etc/bind/db.midominio.local**
+
+**sudo nano /etc/bind/db.midominio.local**
+
+Configura los registros de tipo A relacionando nombres de host con IPs:
+
+$TTL    604800
+
+@       IN      SOA     ns1.midominio.local. admin.midominio.local. (
+
+                         2         ; Serial
+                         
+                    604800         ; Refresh
+                    
+                     86400         ; Retry
+                     
+                   2419200         ; Expire
+                   
+                    604800 )       ; Negative Cache TTL
+                    
+;
+
+@       IN      NS      ns1.midominio.local.
+
+ns1     IN      A       172.16.6.40
+
+equipo1 IN      A       172.16.6.41
+
+equipo2 IN      A       172.16.6.42
+
+equipo3 IN      A       172.16.6.43
+
+equipo4 IN      A       172.16.6.44
+
+**5.Iniciar y comprobar el servicio**
+
+Reinicia BIND9 para aplicar los cambios y verifica su estado
+
+**sudo systemctl restart bind9**
+
+**sudo systemctl status bind9**
+
+Puedes probar que resuelve correctamente usando la herramienta dig:
+
+**dig @localhost servidor.midominio.local**
+
+El servidor DNS no me funciona ahora veremos como lo arreglamos.
 
 **1. Para arreglar el problema debemos de cambiar el nombre del dominio, con el siguiente comando.**
 
