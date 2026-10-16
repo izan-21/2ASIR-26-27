@@ -26,33 +26,12 @@ $TTL    604800
                     604800 )       ; Negative Cache TTL
                     
 ;
-
 @       IN      NS      ns1.midominio.lan.
-
 ns1     IN      A       172.16.5.40
-
 equipo1 IN      A       172.16.5.42
-
 equipo2 IN      A       172.16.5.43
-
 equipo3 IN      A       172.16.5.44
 
-
-$TTL    604800
-@       IN      SOA     ns1.midominio.lan. admin-midominio.lan. (
-                             1         ; Serial
-                        604800         ; Refresh
-                         86400         ; Retry
-                       2419200         ; Expire
-                        604800 )       ; Negative Cache TTL
-
-@       IN      NS      ns1.midominio.lan.
-
-; Mapeo de la IP al nombre (último octeto)
-40      IN      PTR     ns1.midominio.lan.
-42      IN      PTR     equipo1.midominio.lan.
-43      IN      PTR     equipo2.midominio.lan.
-44      IN      PTR     equipo3.midominio.lan.
 **3. Actualizar el archivo named.conf.local**
 
 No olvides actualizar también la ruta en tu archivo de configuración de zonas:
