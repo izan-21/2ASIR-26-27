@@ -45,14 +45,18 @@ No olvides actualizar también la ruta en tu archivo de configuración de zonas:
 **sudo nano /etc/bind/named.conf.local**
 
 Modifica la línea del archivo para que apunte al nuevo nombre:
-named
+
 zone "midominio.lan" {
+
     type master;
+    
     file "/etc/bind/db.midominio.lan";
+    
 };
 
 
 Ahora reiniciamos el bind9
+
 **sudo systemctl restart bind9**
 
 
